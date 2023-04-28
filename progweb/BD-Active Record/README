@@ -1,0 +1,30 @@
+O banco de dados foi formulado da seguinte forma:
+Tabelas: authors,documents,books,genres,books_genres de Tabelas.sqlite3
+-author tem muitos books (1:n)
+-author tem um document (1:1)
+-books tem muitos genres e genres tem muitos books (n:n)
+
+Para rodar o programa deve ser feito o comando: "ruby comandos.rb"
+
+As operacoes sao: "inclusao", "alteracao", "exclusao", "lista"
+As tabelas: "authors","documents","books","genres","books_genres"
+Atributo e valor deve ser entre pareteses e sem espaço: (atributo=valor) 
+
+
+obs: - Para incluir book é necessário pelo menos um genre
+     - Para incluir book e document é necessário ter um author_id incluido
+     - Para incluir mais de um genre em book, basta colocar vírgula
+     - Para a alteracao é feito (atributo=valor>novo_valor)
+
+Alguns exemplos:
+
+inclusao authors (nome=Willian) (sobrenome=Shakespeare)
+inclusao books (titulo_livro=A Dança dos Dragões) (ano_publicacao=2011) (author_id=1) (genre=Fantasia,Aventura)
+inclusao books (titulo_livro=O cemitério) (ano_publicacao=1983) (author_id=4) (genre=Horror)
+inclusao documents (rg=12345) (cpf=378) (author_id=2)
+inclusao genres (tipo=Policial)
+exclusao authors (sobrenome=Orwell)
+exclusao documents (rg=1004)
+alteracao authors (nome=Frank>Josh)
+alteracao genres (tipo=Fantasia>Biografia)
+alteracao books (titulo_livro=Fahrenheit 451>Fahrenheit 000)
